@@ -44,7 +44,23 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        // Controlla che la categoria sia attiva
+        if (!$category->is_active) {
+            abort(404);
+        }
+
+        // Prodotti della categoria con paginazione
+        $products = $category->products()
+            ->with('primaryImage')
+            ->where('is_active', true)
+            ->paginate(12);
+
+        // Sottocategorie se presenti
+        $subcategories = $category->children()
+            ->where('is_active', true)
+            ->get();
+
+        return view('categories.show', compact('category', 'products', 'subcategories'));
     }
 
     /**

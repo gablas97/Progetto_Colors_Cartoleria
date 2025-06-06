@@ -1,0 +1,57 @@
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
+}
+
+/* Cards */
+.category-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+}
+
+.product-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Product Page */
+.product-images img {
+    max-height: 500px;
+    object-fit: contain;
+}
+
+/* Footer */
+footer .social-links a:hover {
+    opacity: 0.8;
+}
+
+/* Utilities */
+.min-vh-100 {
+    min-height: calc(100vh - 200px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section .display-4 {
+        font-size: 2.5rem;
+    }
+}
